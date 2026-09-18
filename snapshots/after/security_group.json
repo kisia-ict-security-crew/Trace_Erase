@@ -1,0 +1,135 @@
+{
+  "timestamp": "2026-09-17T07:22:48.760682+00:00",
+  "resource_type": "SECURITY_GROUP",
+  "resources": [
+    {
+      "group_id": "sg-05258a82bf9ce583f",
+      "group_name": "default",
+      "description": "default VPC security group",
+      "vpc_id": "vpc-0a8304674c49b5e11",
+      "owner_id": "746430304999",
+      "ingress": [
+        {
+          "protocol": "-1",
+          "from_port": null,
+          "to_port": null,
+          "ipv4_ranges": [],
+          "ipv6_ranges": [],
+          "prefix_lists": [],
+          "security_group_references": [
+            {
+              "group_id": "sg-05258a82bf9ce583f",
+              "user_id": "746430304999",
+              "vpc_id": null,
+              "vpc_peering_connection_id": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "egress": [
+        {
+          "protocol": "-1",
+          "from_port": null,
+          "to_port": null,
+          "ipv4_ranges": [
+            {
+              "cidr": "0.0.0.0/0",
+              "description": null
+            }
+          ],
+          "ipv6_ranges": [],
+          "prefix_lists": [],
+          "security_group_references": []
+        }
+      ],
+      "tags": {}
+    },
+    {
+      "group_id": "sg-075bcd97bdb3ceaa8",
+      "group_name": "default",
+      "description": "default VPC security group",
+      "vpc_id": "vpc-0df03922c392b1c60",
+      "owner_id": "746430304999",
+      "ingress": [
+        {
+          "protocol": "-1",
+          "from_port": null,
+          "to_port": null,
+          "ipv4_ranges": [],
+          "ipv6_ranges": [],
+          "prefix_lists": [],
+          "security_group_references": [
+            {
+              "group_id": "sg-075bcd97bdb3ceaa8",
+              "user_id": "746430304999",
+              "vpc_id": null,
+              "vpc_peering_connection_id": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "egress": [
+        {
+          "protocol": "-1",
+          "from_port": null,
+          "to_port": null,
+          "ipv4_ranges": [
+            {
+              "cidr": "0.0.0.0/0",
+              "description": null
+            }
+          ],
+          "ipv6_ranges": [],
+          "prefix_lists": [],
+          "security_group_references": []
+        }
+      ],
+      "tags": {}
+    },
+    {
+      "group_id": "sg-09640f9e9e64d5d68",
+      "group_name": "default",
+      "description": "default VPC security group",
+      "vpc_id": "vpc-0b7bc018b8f5fd0d1",
+      "owner_id": "746430304999",
+      "ingress": [
+        {
+          "protocol": "-1",
+          "from_port": null,
+          "to_port": null,
+          "ipv4_ranges": [],
+          "ipv6_ranges": [],
+          "prefix_lists": [],
+          "security_group_references": [
+            {
+              "group_id": "sg-09640f9e9e64d5d68",
+              "user_id": "746430304999",
+              "vpc_id": null,
+              "vpc_peering_connection_id": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "egress": [
+        {
+          "protocol": "-1",
+          "from_port": null,
+          "to_port": null,
+          "ipv4_ranges": [
+            {
+              "cidr": "0.0.0.0/0",
+              "description": null
+            }
+          ],
+          "ipv6_ranges": [],
+          "prefix_lists": [],
+          "security_group_references": []
+        }
+      ],
+      "tags": {}
+    }
+  ]
+}

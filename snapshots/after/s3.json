@@ -1,0 +1,53 @@
+{
+  "timestamp": "2026-09-17T07:22:48.762189+00:00",
+  "resource_type": "S3",
+  "resources": [
+    {
+      "bucket_name": "stratus-red-team-ransomware-bucket-zwbvnn",
+      "bucket_arn": "arn:aws:s3:::stratus-red-team-ransomware-bucket-zwbvnn",
+      "creation_date": "2026-09-17T07:18:41+00:00",
+      "region": "ap-northeast-2",
+      "public_access_block": {
+        "BlockPublicAcls": true,
+        "IgnorePublicAcls": true,
+        "BlockPublicPolicy": true,
+        "RestrictPublicBuckets": true
+      },
+      "bucket_policy": null,
+      "acl": {
+        "owner": {
+          "ID": "6be8a94dbf1a3408ce1a793e8195d9a89cc6c951fa7f3771a535b605fd48bef8"
+        },
+        "grants": [
+          {
+            "permission": "FULL_CONTROL",
+            "grantee": {
+              "type": "CanonicalUser",
+              "id": "6be8a94dbf1a3408ce1a793e8195d9a89cc6c951fa7f3771a535b605fd48bef8",
+              "display_name": null,
+              "uri": null
+            }
+          }
+        ]
+      },
+      "versioning": {
+        "status": "Enabled",
+        "mfa_delete": null
+      },
+      "encryption": [
+        {
+          "ApplyServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+          },
+          "BucketKeyEnabled": false,
+          "BlockedEncryptionTypes": {
+            "EncryptionType": [
+              "SSE-C"
+            ]
+          }
+        }
+      ],
+      "tags": {}
+    }
+  ]
+}

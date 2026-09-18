@@ -1,0 +1,192 @@
+{
+  "timestamp": "2026-09-17T07:22:48.762189+00:00",
+  "resource_type": "EC2",
+  "resources": [
+    {
+      "instance_id": "i-0403b30a7201ebca1",
+      "launch_time": "2026-09-17T07:15:56+00:00",
+      "instance_type": "t3.micro",
+      "image_id": "ami-04a792bd995a23990",
+      "architecture": "x86_64",
+      "platform": null,
+      "platform_details": "Linux/UNIX",
+      "state": {
+        "code": 48,
+        "name": "terminated"
+      },
+      "availability_zone": "ap-northeast-2a",
+      "tenancy": "default",
+      "subnet_id": null,
+      "vpc_id": null,
+      "private_ip": null,
+      "private_dns": "",
+      "public_ip": null,
+      "public_dns": "",
+      "security_groups": [],
+      "network_interfaces": [],
+      "iam_instance_profile": null,
+      "block_devices": [],
+      "monitoring": "disabled",
+      "key_name": null,
+      "tags": {
+        "StratusRedTeam": "true"
+      }
+    },
+    {
+      "instance_id": "i-0ad41b62b29e34e70",
+      "launch_time": "2026-09-17T07:12:53+00:00",
+      "instance_type": "t3.micro",
+      "image_id": "ami-04a792bd995a23990",
+      "architecture": "x86_64",
+      "platform": null,
+      "platform_details": "Linux/UNIX",
+      "state": {
+        "code": 48,
+        "name": "terminated"
+      },
+      "availability_zone": "ap-northeast-2a",
+      "tenancy": "default",
+      "subnet_id": null,
+      "vpc_id": null,
+      "private_ip": null,
+      "private_dns": "",
+      "public_ip": null,
+      "public_dns": "",
+      "security_groups": [],
+      "network_interfaces": [],
+      "iam_instance_profile": null,
+      "block_devices": [],
+      "monitoring": "disabled",
+      "key_name": null,
+      "tags": {
+        "StratusRedTeam": "true"
+      }
+    },
+    {
+      "instance_id": "i-0477740b570e2d092",
+      "launch_time": "2026-09-17T07:18:56+00:00",
+      "instance_type": "t3.micro",
+      "image_id": "ami-04a792bd995a23990",
+      "architecture": "x86_64",
+      "platform": null,
+      "platform_details": "Linux/UNIX",
+      "state": {
+        "code": 16,
+        "name": "running"
+      },
+      "availability_zone": "ap-northeast-2a",
+      "tenancy": "default",
+      "subnet_id": "subnet-08280e723d6be5db9",
+      "vpc_id": "vpc-0a8304674c49b5e11",
+      "private_ip": "10.0.1.10",
+      "private_dns": "ip-10-0-1-10.ap-northeast-2.compute.internal",
+      "public_ip": null,
+      "public_dns": "",
+      "security_groups": [
+        {
+          "group_id": "sg-05258a82bf9ce583f",
+          "group_name": "default"
+        }
+      ],
+      "network_interfaces": [
+        {
+          "network_interface_id": "eni-08bd990767e8c90ba",
+          "subnet_id": "subnet-08280e723d6be5db9",
+          "vpc_id": "vpc-0a8304674c49b5e11",
+          "private_ip": "10.0.1.10",
+          "private_dns": null,
+          "interface_type": "interface",
+          "status": "in-use",
+          "mac_address": "02:ff:e3:12:0a:5f",
+          "security_groups": [
+            {
+              "group_id": "sg-05258a82bf9ce583f",
+              "group_name": "default"
+            }
+          ]
+        }
+      ],
+      "iam_instance_profile": {
+        "id": "AIPA23SVWSLTXNEKPI52D",
+        "arn": "arn:aws:iam::746430304999:instance-profile/stratus-red-team-ec2-steal-credentials-instance"
+      },
+      "block_devices": [
+        {
+          "device_name": "/dev/xvda",
+          "volume_id": "vol-0f77fe0b79f88d96a",
+          "delete_on_termination": true,
+          "status": "attached",
+          "attach_time": "2026-09-17T07:18:57+00:00"
+        }
+      ],
+      "monitoring": "disabled",
+      "key_name": null,
+      "tags": {
+        "StratusRedTeam": "true"
+      }
+    },
+    {
+      "instance_id": "i-076f30f6afcf2bb32",
+      "launch_time": "2026-09-17T07:21:45+00:00",
+      "instance_type": "t3.micro",
+      "image_id": "ami-04a792bd995a23990",
+      "architecture": "x86_64",
+      "platform": null,
+      "platform_details": "Linux/UNIX",
+      "state": {
+        "code": 16,
+        "name": "running"
+      },
+      "availability_zone": "ap-northeast-2a",
+      "tenancy": "default",
+      "subnet_id": "subnet-0c0d197fec240d683",
+      "vpc_id": "vpc-0df03922c392b1c60",
+      "private_ip": "10.0.1.10",
+      "private_dns": "ip-10-0-1-10.ap-northeast-2.compute.internal",
+      "public_ip": null,
+      "public_dns": "",
+      "security_groups": [
+        {
+          "group_id": "sg-075bcd97bdb3ceaa8",
+          "group_name": "default"
+        }
+      ],
+      "network_interfaces": [
+        {
+          "network_interface_id": "eni-01d2ae7fd9f0ab619",
+          "subnet_id": "subnet-0c0d197fec240d683",
+          "vpc_id": "vpc-0df03922c392b1c60",
+          "private_ip": "10.0.1.10",
+          "private_dns": null,
+          "interface_type": "interface",
+          "status": "in-use",
+          "mac_address": "02:ff:fe:7c:01:23",
+          "security_groups": [
+            {
+              "group_id": "sg-075bcd97bdb3ceaa8",
+              "group_name": "default"
+            }
+          ]
+        }
+      ],
+      "iam_instance_profile": {
+        "id": "AIPA23SVWSLTU6FHAOCWS",
+        "arn": "arn:aws:iam::746430304999:instance-profile/stratus-red-team-usr-data-instance"
+      },
+      "block_devices": [
+        {
+          "device_name": "/dev/xvda",
+          "volume_id": "vol-0f6b64e52c990d721",
+          "delete_on_termination": true,
+          "status": "attached",
+          "attach_time": "2026-09-17T07:19:00+00:00"
+        }
+      ],
+      "monitoring": "disabled",
+      "key_name": null,
+      "tags": {
+        "StratusRedTeam": "true"
+      }
+    }
+  ]
+}
