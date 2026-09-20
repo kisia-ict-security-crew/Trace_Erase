@@ -1,19 +1,8 @@
 {
-  "timestamp": "2026-09-17T07:22:48.766198+00:00",
+  "timestamp": "2026-09-20T08:52:03.205829+00:00",
   "resource_type": "VPC",
   "resources": {
     "vpcs": [
-      {
-        "vpc_id": "vpc-0df03922c392b1c60",
-        "cidr_block": "10.0.0.0/16",
-        "state": "available",
-        "is_default": false,
-        "dhcp_options_id": "dopt-0bf4dddbd7e062169",
-        "tags": {
-          "StratusRedTeam": "true",
-          "Name": "stratus-red-team-usr-data-vpc"
-        }
-      },
       {
         "vpc_id": "vpc-0b7bc018b8f5fd0d1",
         "cidr_block": "172.31.0.0/16",
@@ -23,14 +12,14 @@
         "tags": {}
       },
       {
-        "vpc_id": "vpc-0a8304674c49b5e11",
+        "vpc_id": "vpc-015a0276c839f9641",
         "cidr_block": "10.0.0.0/16",
         "state": "available",
         "is_default": false,
         "dhcp_options_id": "dopt-0bf4dddbd7e062169",
         "tags": {
-          "StratusRedTeam": "true",
-          "Name": "stratus-red-team-ec2-steal-credentials-vpc"
+          "Name": "StratusRedTeamVpc",
+          "StratusRedTeam": "true"
         }
       }
     ],
@@ -46,21 +35,6 @@
         "available_ip_count": 4091,
         "default_for_az": true,
         "tags": {}
-      },
-      {
-        "subnet_id": "subnet-08cb6758db0f4ff81",
-        "vpc_id": "vpc-0a8304674c49b5e11",
-        "cidr_block": "10.0.128.0/24",
-        "availability_zone": "ap-northeast-2a",
-        "availability_zone_id": "apne2-az1",
-        "state": "available",
-        "map_public_ip_on_launch": false,
-        "available_ip_count": 250,
-        "default_for_az": false,
-        "tags": {
-          "Name": "stratus-red-team-ec2-steal-credentials-vpc-public-ap-northeast-2a",
-          "StratusRedTeam": "true"
-        }
       },
       {
         "subnet_id": "subnet-08c66226ab75c18c7",
@@ -97,101 +71,12 @@
         "available_ip_count": 4091,
         "default_for_az": true,
         "tags": {}
-      },
-      {
-        "subnet_id": "subnet-0c0d197fec240d683",
-        "vpc_id": "vpc-0df03922c392b1c60",
-        "cidr_block": "10.0.1.0/24",
-        "availability_zone": "ap-northeast-2a",
-        "availability_zone_id": "apne2-az1",
-        "state": "available",
-        "map_public_ip_on_launch": false,
-        "available_ip_count": 250,
-        "default_for_az": false,
-        "tags": {
-          "StratusRedTeam": "true",
-          "Name": "stratus-red-team-usr-data-vpc-private-ap-northeast-2a"
-        }
-      },
-      {
-        "subnet_id": "subnet-08280e723d6be5db9",
-        "vpc_id": "vpc-0a8304674c49b5e11",
-        "cidr_block": "10.0.1.0/24",
-        "availability_zone": "ap-northeast-2a",
-        "availability_zone_id": "apne2-az1",
-        "state": "available",
-        "map_public_ip_on_launch": false,
-        "available_ip_count": 250,
-        "default_for_az": false,
-        "tags": {
-          "StratusRedTeam": "true",
-          "Name": "stratus-red-team-ec2-steal-credentials-vpc-private-ap-northeast-2a"
-        }
-      },
-      {
-        "subnet_id": "subnet-0177c942f8e282620",
-        "vpc_id": "vpc-0df03922c392b1c60",
-        "cidr_block": "10.0.128.0/24",
-        "availability_zone": "ap-northeast-2a",
-        "availability_zone_id": "apne2-az1",
-        "state": "available",
-        "map_public_ip_on_launch": false,
-        "available_ip_count": 250,
-        "default_for_az": false,
-        "tags": {
-          "StratusRedTeam": "true",
-          "Name": "stratus-red-team-usr-data-vpc-public-ap-northeast-2a"
-        }
       }
     ],
     "route_tables": [
       {
-        "route_table_id": "rtb-0897959164d003f0a",
-        "vpc_id": "vpc-0a8304674c49b5e11",
-        "routes": [
-          {
-            "destination_cidr": "10.0.0.0/16",
-            "destination_ipv6": null,
-            "destination_prefix_list": null,
-            "gateway_id": "local",
-            "nat_gateway_id": null,
-            "network_interface_id": null,
-            "transit_gateway_id": null,
-            "instance_id": null,
-            "state": "active",
-            "origin": "CreateRouteTable"
-          },
-          {
-            "destination_cidr": "0.0.0.0/0",
-            "destination_ipv6": null,
-            "destination_prefix_list": null,
-            "gateway_id": "igw-044ca65d259ef0bea",
-            "nat_gateway_id": null,
-            "network_interface_id": null,
-            "transit_gateway_id": null,
-            "instance_id": null,
-            "state": "active",
-            "origin": "CreateRoute"
-          }
-        ],
-        "associations": [
-          {
-            "route_table_association_id": "rtbassoc-062d76d52c28620ec",
-            "subnet_id": "subnet-08cb6758db0f4ff81",
-            "main": false,
-            "association_state": {
-              "State": "associated"
-            }
-          }
-        ],
-        "tags": {
-          "StratusRedTeam": "true",
-          "Name": "stratus-red-team-ec2-steal-credentials-vpc-public"
-        }
-      },
-      {
-        "route_table_id": "rtb-077ded49dfcdc463a",
-        "vpc_id": "vpc-0df03922c392b1c60",
+        "route_table_id": "rtb-01f81b080e985dd53",
+        "vpc_id": "vpc-015a0276c839f9641",
         "routes": [
           {
             "destination_cidr": "10.0.0.0/16",
@@ -208,7 +93,7 @@
         ],
         "associations": [
           {
-            "route_table_association_id": "rtbassoc-09faf747587f6bd70",
+            "route_table_association_id": "rtbassoc-02febfed1b09d4476",
             "subnet_id": null,
             "main": true,
             "association_state": {
@@ -258,183 +143,9 @@
           }
         ],
         "tags": {}
-      },
-      {
-        "route_table_id": "rtb-061e81aba9c5c1b44",
-        "vpc_id": "vpc-0a8304674c49b5e11",
-        "routes": [
-          {
-            "destination_cidr": "10.0.0.0/16",
-            "destination_ipv6": null,
-            "destination_prefix_list": null,
-            "gateway_id": "local",
-            "nat_gateway_id": null,
-            "network_interface_id": null,
-            "transit_gateway_id": null,
-            "instance_id": null,
-            "state": "active",
-            "origin": "CreateRouteTable"
-          },
-          {
-            "destination_cidr": "0.0.0.0/0",
-            "destination_ipv6": null,
-            "destination_prefix_list": null,
-            "gateway_id": null,
-            "nat_gateway_id": "nat-07e9e82affb393244",
-            "network_interface_id": null,
-            "transit_gateway_id": null,
-            "instance_id": null,
-            "state": "active",
-            "origin": "CreateRoute"
-          }
-        ],
-        "associations": [
-          {
-            "route_table_association_id": "rtbassoc-0954e1392d329623f",
-            "subnet_id": "subnet-08280e723d6be5db9",
-            "main": false,
-            "association_state": {
-              "State": "associated"
-            }
-          }
-        ],
-        "tags": {
-          "Name": "stratus-red-team-ec2-steal-credentials-vpc-private-ap-northeast-2a",
-          "StratusRedTeam": "true"
-        }
-      },
-      {
-        "route_table_id": "rtb-06cace5e4fbf61acc",
-        "vpc_id": "vpc-0df03922c392b1c60",
-        "routes": [
-          {
-            "destination_cidr": "10.0.0.0/16",
-            "destination_ipv6": null,
-            "destination_prefix_list": null,
-            "gateway_id": "local",
-            "nat_gateway_id": null,
-            "network_interface_id": null,
-            "transit_gateway_id": null,
-            "instance_id": null,
-            "state": "active",
-            "origin": "CreateRouteTable"
-          },
-          {
-            "destination_cidr": "0.0.0.0/0",
-            "destination_ipv6": null,
-            "destination_prefix_list": null,
-            "gateway_id": "igw-0bde4cce4381754a9",
-            "nat_gateway_id": null,
-            "network_interface_id": null,
-            "transit_gateway_id": null,
-            "instance_id": null,
-            "state": "active",
-            "origin": "CreateRoute"
-          }
-        ],
-        "associations": [
-          {
-            "route_table_association_id": "rtbassoc-0cfb7fe5f74bde755",
-            "subnet_id": "subnet-0177c942f8e282620",
-            "main": false,
-            "association_state": {
-              "State": "associated"
-            }
-          }
-        ],
-        "tags": {
-          "Name": "stratus-red-team-usr-data-vpc-public",
-          "StratusRedTeam": "true"
-        }
-      },
-      {
-        "route_table_id": "rtb-0f389070520f65e68",
-        "vpc_id": "vpc-0df03922c392b1c60",
-        "routes": [
-          {
-            "destination_cidr": "10.0.0.0/16",
-            "destination_ipv6": null,
-            "destination_prefix_list": null,
-            "gateway_id": "local",
-            "nat_gateway_id": null,
-            "network_interface_id": null,
-            "transit_gateway_id": null,
-            "instance_id": null,
-            "state": "active",
-            "origin": "CreateRouteTable"
-          },
-          {
-            "destination_cidr": "0.0.0.0/0",
-            "destination_ipv6": null,
-            "destination_prefix_list": null,
-            "gateway_id": null,
-            "nat_gateway_id": "nat-0e1c123963b6b7804",
-            "network_interface_id": null,
-            "transit_gateway_id": null,
-            "instance_id": null,
-            "state": "active",
-            "origin": "CreateRoute"
-          }
-        ],
-        "associations": [
-          {
-            "route_table_association_id": "rtbassoc-051aa3610edeaa216",
-            "subnet_id": "subnet-0c0d197fec240d683",
-            "main": false,
-            "association_state": {
-              "State": "associated"
-            }
-          }
-        ],
-        "tags": {
-          "StratusRedTeam": "true",
-          "Name": "stratus-red-team-usr-data-vpc-private-ap-northeast-2a"
-        }
-      },
-      {
-        "route_table_id": "rtb-0d341e721f59ac8b4",
-        "vpc_id": "vpc-0a8304674c49b5e11",
-        "routes": [
-          {
-            "destination_cidr": "10.0.0.0/16",
-            "destination_ipv6": null,
-            "destination_prefix_list": null,
-            "gateway_id": "local",
-            "nat_gateway_id": null,
-            "network_interface_id": null,
-            "transit_gateway_id": null,
-            "instance_id": null,
-            "state": "active",
-            "origin": "CreateRouteTable"
-          }
-        ],
-        "associations": [
-          {
-            "route_table_association_id": "rtbassoc-067917acaccc620e3",
-            "subnet_id": null,
-            "main": true,
-            "association_state": {
-              "State": "associated"
-            }
-          }
-        ],
-        "tags": {}
       }
     ],
     "internet_gateways": [
-      {
-        "internet_gateway_id": "igw-044ca65d259ef0bea",
-        "attachments": [
-          {
-            "vpc_id": "vpc-0a8304674c49b5e11",
-            "state": "available"
-          }
-        ],
-        "tags": {
-          "StratusRedTeam": "true",
-          "Name": "stratus-red-team-ec2-steal-credentials-vpc"
-        }
-      },
       {
         "internet_gateway_id": "igw-099f6b2d7885c3947",
         "attachments": [
@@ -444,25 +155,12 @@
           }
         ],
         "tags": {}
-      },
-      {
-        "internet_gateway_id": "igw-0bde4cce4381754a9",
-        "attachments": [
-          {
-            "vpc_id": "vpc-0df03922c392b1c60",
-            "state": "available"
-          }
-        ],
-        "tags": {
-          "Name": "stratus-red-team-usr-data-vpc",
-          "StratusRedTeam": "true"
-        }
       }
     ],
     "network_acls": [
       {
-        "network_acl_id": "acl-019bc7c590d169893",
-        "vpc_id": "vpc-0df03922c392b1c60",
+        "network_acl_id": "acl-0f5a551f3a2e487b9",
+        "vpc_id": "vpc-015a0276c839f9641",
         "is_default": true,
         "entries": [
           {
@@ -506,16 +204,7 @@
             "port_range": null
           }
         ],
-        "associations": [
-          {
-            "association_id": "aclassoc-0b3377d1b8a9f1222",
-            "subnet_id": "subnet-0c0d197fec240d683"
-          },
-          {
-            "association_id": "aclassoc-02c750706c7712b85",
-            "subnet_id": "subnet-0177c942f8e282620"
-          }
-        ],
+        "associations": [],
         "tags": {}
       },
       {
@@ -580,64 +269,6 @@
           {
             "association_id": "aclassoc-097a101ba7aca5fad",
             "subnet_id": "subnet-0f8ed7abde6ea617f"
-          }
-        ],
-        "tags": {}
-      },
-      {
-        "network_acl_id": "acl-065b24dedad708d27",
-        "vpc_id": "vpc-0a8304674c49b5e11",
-        "is_default": true,
-        "entries": [
-          {
-            "rule_number": 100,
-            "protocol": "-1",
-            "rule_action": "allow",
-            "egress": true,
-            "cidr_block": "0.0.0.0/0",
-            "ipv6_cidr_block": null,
-            "icmp_type_code": null,
-            "port_range": null
-          },
-          {
-            "rule_number": 32767,
-            "protocol": "-1",
-            "rule_action": "deny",
-            "egress": true,
-            "cidr_block": "0.0.0.0/0",
-            "ipv6_cidr_block": null,
-            "icmp_type_code": null,
-            "port_range": null
-          },
-          {
-            "rule_number": 100,
-            "protocol": "-1",
-            "rule_action": "allow",
-            "egress": false,
-            "cidr_block": "0.0.0.0/0",
-            "ipv6_cidr_block": null,
-            "icmp_type_code": null,
-            "port_range": null
-          },
-          {
-            "rule_number": 32767,
-            "protocol": "-1",
-            "rule_action": "deny",
-            "egress": false,
-            "cidr_block": "0.0.0.0/0",
-            "ipv6_cidr_block": null,
-            "icmp_type_code": null,
-            "port_range": null
-          }
-        ],
-        "associations": [
-          {
-            "association_id": "aclassoc-04be0abe77472730c",
-            "subnet_id": "subnet-08280e723d6be5db9"
-          },
-          {
-            "association_id": "aclassoc-0eb15d06f37498698",
-            "subnet_id": "subnet-08cb6758db0f4ff81"
           }
         ],
         "tags": {}

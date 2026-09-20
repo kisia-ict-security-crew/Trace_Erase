@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-09-17T07:22:48.760682+00:00",
+  "timestamp": "2026-09-20T08:52:03.200522+00:00",
   "resource_type": "SECURITY_GROUP",
   "resources": [
     {
-      "group_id": "sg-05258a82bf9ce583f",
+      "group_id": "sg-0e60570b4f4f03b7c",
       "group_name": "default",
       "description": "default VPC security group",
-      "vpc_id": "vpc-0a8304674c49b5e11",
+      "vpc_id": "vpc-015a0276c839f9641",
       "owner_id": "746430304999",
       "ingress": [
         {
@@ -18,50 +18,7 @@
           "prefix_lists": [],
           "security_group_references": [
             {
-              "group_id": "sg-05258a82bf9ce583f",
-              "user_id": "746430304999",
-              "vpc_id": null,
-              "vpc_peering_connection_id": null,
-              "description": null
-            }
-          ]
-        }
-      ],
-      "egress": [
-        {
-          "protocol": "-1",
-          "from_port": null,
-          "to_port": null,
-          "ipv4_ranges": [
-            {
-              "cidr": "0.0.0.0/0",
-              "description": null
-            }
-          ],
-          "ipv6_ranges": [],
-          "prefix_lists": [],
-          "security_group_references": []
-        }
-      ],
-      "tags": {}
-    },
-    {
-      "group_id": "sg-075bcd97bdb3ceaa8",
-      "group_name": "default",
-      "description": "default VPC security group",
-      "vpc_id": "vpc-0df03922c392b1c60",
-      "owner_id": "746430304999",
-      "ingress": [
-        {
-          "protocol": "-1",
-          "from_port": null,
-          "to_port": null,
-          "ipv4_ranges": [],
-          "ipv6_ranges": [],
-          "prefix_lists": [],
-          "security_group_references": [
-            {
-              "group_id": "sg-075bcd97bdb3ceaa8",
+              "group_id": "sg-0e60570b4f4f03b7c",
               "user_id": "746430304999",
               "vpc_id": null,
               "vpc_peering_connection_id": null,
@@ -130,6 +87,68 @@
         }
       ],
       "tags": {}
+    },
+    {
+      "group_id": "sg-0f30185c986cb2623",
+      "group_name": "stratus-red-team-open-sg-sg",
+      "description": "Allow TLS inbound traffic",
+      "vpc_id": "vpc-015a0276c839f9641",
+      "owner_id": "746430304999",
+      "ingress": [
+        {
+          "protocol": "tcp",
+          "from_port": 22,
+          "to_port": 22,
+          "ipv4_ranges": [
+            {
+              "cidr": "0.0.0.0/0",
+              "description": null
+            }
+          ],
+          "ipv6_ranges": [],
+          "prefix_lists": [],
+          "security_group_references": []
+        },
+        {
+          "protocol": "tcp",
+          "from_port": 443,
+          "to_port": 443,
+          "ipv4_ranges": [
+            {
+              "cidr": "0.0.0.0/0",
+              "description": "TLS from Internet"
+            }
+          ],
+          "ipv6_ranges": [],
+          "prefix_lists": [],
+          "security_group_references": []
+        }
+      ],
+      "egress": [
+        {
+          "protocol": "-1",
+          "from_port": null,
+          "to_port": null,
+          "ipv4_ranges": [
+            {
+              "cidr": "0.0.0.0/0",
+              "description": null
+            }
+          ],
+          "ipv6_ranges": [
+            {
+              "cidr": "::/0",
+              "description": null
+            }
+          ],
+          "prefix_lists": [],
+          "security_group_references": []
+        }
+      ],
+      "tags": {
+        "StratusRedTeam": "true",
+        "Name": "stratus-red-team-open-sg-sg"
+      }
     }
   ]
 }
