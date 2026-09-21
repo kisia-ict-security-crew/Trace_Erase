@@ -68,7 +68,7 @@ def collect_users():
             for user in page.get("Users", []):
                 username = user["UserName"]
 
-                # Managed Policies
+                # 1. Managed Policies
                 attached_response = safe_call(
                     lambda: iam.list_attached_user_policies(UserName=username),
                     {"AttachedPolicies": []}
@@ -77,7 +77,7 @@ def collect_users():
                     collect_managed_policy(p) for p in attached_response.get("AttachedPolicies", [])
                 ]
 
-                # Inline Policies
+                # 2. Inline Policies
                 inline_response = safe_call(
                     lambda: iam.list_user_policies(UserName=username),
                     {"PolicyNames": []}
@@ -90,7 +90,7 @@ def collect_users():
                     )
                     inline_policies.append({"policy_name": policy_name, "document": pol_doc})
 
-                # Groups
+                # 3. Groups
                 group_response = safe_call(
                     lambda: iam.list_groups_for_user(UserName=username),
                     {"Groups": []}
@@ -98,6 +98,20 @@ def collect_users():
                 groups = [
                     {"group_id": g["GroupId"], "group_name": g["GroupName"], "arn": g["Arn"]}
                     for g in group_response.get("Groups", [])
+                ]
+
+                # 4. [추가됨] Access Keys (백도어 탐지용)
+                access_keys_response = safe_call(
+                    lambda: iam.list_access_keys(UserName=username),
+                    {"AccessKeyMetadata": []}
+                )
+                access_keys = [
+                    {
+                        "access_key_id": ak["AccessKeyId"],
+                        "status": ak["Status"],
+                        "create_date": ak["CreateDate"].isoformat() if hasattr(ak.get("CreateDate"), "isoformat") else str(ak.get("CreateDate"))
+                    }
+                    for ak in access_keys_response.get("AccessKeyMetadata", [])
                 ]
 
                 users.append({
@@ -109,6 +123,7 @@ def collect_users():
                     "attached_policies": attached_policies,
                     "inline_policies": inline_policies,
                     "groups": groups,
+                    "access_keys": access_keys, # 추출된 액세스 키 배열 추가
                 })
     except ClientError as e:
         print(f"    [!] Failed to list IAM Users: {e}")
