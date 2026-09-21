@@ -215,6 +215,34 @@ def collect_network_acls():
 
 
 # ============================================================
+# VPC Flow Logs (새로 추가됨)
+# ============================================================
+
+def collect_flow_logs():
+    flow_logs = []
+    paginator = ec2.get_paginator("describe_flow_logs")
+
+    try:
+        for page in paginator.paginate():
+            for fl in page.get("FlowLogs", []):
+                flow_logs.append({
+                    "flow_log_id": fl["FlowLogId"],
+                    "resource_id": fl.get("ResourceId"),
+                    "log_status": fl.get("FlowLogStatus"),
+                    "log_destination": fl.get("LogDestination"),
+                    "creation_time": fl.get("CreationTime").isoformat() if hasattr(fl.get("CreationTime"), "isoformat") else str(fl.get("CreationTime")),
+                    "tags": {
+                        tag["Key"]: tag["Value"]
+                        for tag in fl.get("Tags", [])
+                    },
+                })
+    except ClientError as e:
+        print(f"    [!] Failed to describe VPC Flow Logs: {e}")
+
+    return flow_logs
+
+
+# ============================================================
 # Entry Point for Main Pipeline
 # ============================================================
 
@@ -229,6 +257,7 @@ def collect_vpc():
             "route_tables": collect_route_tables(),
             "internet_gateways": collect_internet_gateways(),
             "network_acls": collect_network_acls(),
+            "flow_logs": collect_flow_logs(), # 결과에 포함되도록 매핑 추가
         },
     }
 
@@ -251,4 +280,5 @@ if __name__ == "__main__":
     print(f"[+] Route Tables: {len(res['route_tables'])}")
     print(f"[+] Internet Gateways: {len(res['internet_gateways'])}")
     print(f"[+] Network ACLs: {len(res['network_acls'])}")
+    print(f"[+] Flow Logs: {len(res['flow_logs'])}") # 출력 로그 추가
     print("[+] Collection complete")
